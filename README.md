@@ -2,6 +2,9 @@
 
 A small unit testing framework for Barotrauma "in memory" C# mods
 
+Looks like this:
+https://github.com/SomeRandomNoobKekeke/BaroUnitTest/blob/1ecfa4132d16730b6edbec0d92540fb17c9de480/CSharp/Shared/Test/SomeClassTest.cs#L40-L46
+
 All the stuff is in "UnitTest.cs", i expect you to just copy-paste that code into your mods
 
 You can do whatever you want with the code, i'll use it myself in a few of my mods, but i can't promise that i'll expand it into some full scale testing framework or make the real docs
@@ -10,11 +13,11 @@ There are some examples, it's all wrapped as Barotrauma mod, you can just put th
 
 ## Why?
 
-it's a little bit more declarative than prints
+It's slightly more declarative than prints
 
 ## Basic Usage:
 
-create a class that inherits UnitTest
+Create a class that inherits UnitTest
 
 Methods ending in "Test" are considered test methods, add some
 
@@ -22,7 +25,7 @@ Add `Describe(string description, Action test)` blocks, those are creating test 
 
 Then add some `Expect(Action test)`, `Expect(Func<object> test)`, `Expect(object o)` those are creating test results
 
-Then assess those results with `Expect(a).ToBeEqual(b)`, `Expect(a).ToBeNotEqual(b)`, `Expect(a).ToThrow()`, `Expect(a).ToNotThrow(b)`
+Then assess those results with `Expect(a).ToBeEqual(b)`, `Expect(a).ToBeNotEqual(b)`, `Expect(a).ToThrow()`, `Expect(a).ToNotThrow()`
 
 Then you can run that test with UnitTest static methods: `Run(Type T, string method = null)`, `Run<RawType>(string method = null)`, `Run(string name, string method = null)`, `RunAll()`
 
